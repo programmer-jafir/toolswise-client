@@ -10,12 +10,16 @@ const Tool = ({tool}) => {
     <div>
     <p>{description}</p>
     <br></br>
-    <h3 className='text-xl font-bold'>Price: {perPrice}/per</h3>
-    <h4 className='font-semibold'>Minum order: {minium}</h4>
-    <h5 className=' font-semibold'>Available: {available}</h5>
+    <h3 className='text-xl font-bold'>Price: {parseInt(perPrice)}/per</h3>
+    <h4 className='font-semibold'>Minum order: {parseInt(minium)}</h4>
+    <h5 className=' font-semibold'>Available: {
+    parseInt(available) > 0
+    ? <span>{parseInt(available)}</span>
+    : <span className=' text-red-500'>Not Available Now</span>
+    }</h5>
     </div>
     <div class="card-actions justify-end mt-auto">
-      <button class="btn btn-primary">Buy Now</button>
+      <button disabled={parseInt(available)===0} class="btn btn-primary">Buy Now</button>
     </div>
   </div>
 </div>
