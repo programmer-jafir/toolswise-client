@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Hammer",
+        "perPrice": "300",
+        "available": "1000",
+        "minium": "180",
+        "description": "0.23 kg claw hammer for a wide variety of uses Curved claw head for prying and pulling nails and more; flat hammer head delivers powerful strikes",   
+        "img": "https://i.ibb.co/C0BzKkw/hammer.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Rance",
+        "perPrice": "249",
+        "available": "1000",
+        "minium": "180",
+        "description": "Packer: TAPARIA TOOLS LTD. 52MIDC SATPUR NASHIK-422007. This product comes in a proper packaging. Easy to maintain",
+        "img": "https://i.ibb.co/gPty8J1/rance.jpg"
+    },
+    {
+        "id": 3,
+        "name": "STANLEY Knife",
+        "perPrice": "150",
+        "available": "1000",
+        "minium": "180",
+        "description": "Ergonomic plastic frame, auto-locking. Supports up to 16.8 kg of force for cutting. Already comes with 1 blade of 15 cut-off points",
+        "img": "https://i.ibb.co/j8cWDV8/STANLEY-Knife.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Cutting Plier",
+        "perPrice": "280",
+        "available": "1000",
+        "minium": "180",
+        "description": "Packer: TAPARIA TOOLS LTD. 52MIDC SATPUR NASHIK-422007. This product comes in a proper packaging. Easy to maintain",
+        "img": "https://i.ibb.co/s5ksHxB/Cutting-Plier.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Screw Driver",
+        "perPrice": "120",
+        "available": "1000",
+        "minium": "180",
+        "description": "Material: SteelColor: Green and Yellow. Package Contents: 1-Piece Two in One Screw Driver. 1 Year Standard Product Warranty",
+        "img": "https://i.ibb.co/4gYRzzm/Screw-Driver.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Knife",
+        "perPrice": "500",
+        "available": "1000",
+        "minium": "180",
+        "description": "High-carbon stainless-steel blades for sharp edges. Santoku knife is ideal for slicing, mincing & dicing vegetables & meat",
+        "img": "https://i.ibb.co/RTRKWb7/Knife.jpg"
+    }
+]
