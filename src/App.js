@@ -6,6 +6,7 @@ import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
 import Tools from './Pages/Tool/Tools';
 import Footer from './Pages/Shared/Footer';
+import Purchase from './Pages/Tool/Purchase';
 
 function App() {
   return (
@@ -13,9 +14,11 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="tools" element={<Tools />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/tools" element={<Tools />} /> 
+        <Route path="/tool/:id" element={<Purchase />} /> 
+        <Route path="/purchase" element={<Purchase />} /> 
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer></Footer>
     </div>
