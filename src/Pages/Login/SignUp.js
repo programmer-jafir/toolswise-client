@@ -4,7 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
-import useToken from '../../useToken';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
 
@@ -33,8 +33,8 @@ const SignUp = () => {
     if (error || gError || updateError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
-    if (user || guser) {
-        console.log(guser || user);
+    if (token) {
+        navigate('/tools')
     }
 
 
