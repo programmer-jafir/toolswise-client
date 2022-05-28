@@ -1,9 +1,13 @@
+import { isEditable } from '@testing-library/user-event/dist/utils';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Purchase = () => {
     const { id, } = useParams();
     const [info, setInfo] = useState({});
+    const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
         const url = `http://localhost:5000/tool/${id}`
@@ -13,41 +17,94 @@ const Purchase = () => {
     }, []);
 
     const { name, available, img, description, perPrice, minium, _id } = info;
+
+    const handleOrder = event => {
+        event.preventDeafault()
+        console.log(event.target.quantity.value);
+        const order = {
+            toolId: _id,
+            toolName: name,
+            userName: user.displayName,
+            quantity: event.target.quantity.value,
+            address: event.target.address.value,
+            phone: event.target.phone.value,
+        }
+    }
     return (
-        // <div>
-        //     <h1>Purchase: {name}</h1>
-        // </div>
-        //         <div class="card w-96 bg-base-100 shadow-xl">
-        //   <figure><img src={img}  alt="Shoes" /></figure>
-        //   <div class="card-body">
-        //     <h2 class="card-title">{name}</h2>
-        //     <div>
-        //     <p>{description}</p>
-        //     <br></br>
-        //     <h3 className='text-xl font-bold'>Price: {parseInt(perPrice)}/per</h3>
-        //     <h4 className='font-semibold'>Minum order: {parseInt(minium)}</h4>
-        //     <h5 className=' font-semibold'>Available: {
-        //     parseInt(available) > 0
-        //     ? <span>{parseInt(available)}</span>
-        //     : <span className=' text-red-500'>Not Available Now</span>
-        //     }</h5>
-        //     </div>
-        //     <div class="card-actions justify-end mt-auto">
-        //       {/* <button onClick={() => navigatePurchase(_id)} disabled={parseInt(available)===0}  class="btn btn-primary">Buy Now</button> */}
-        //     </div>
-        //   </div>
-        // </div>
         <div>
-            <div class="hero min-h-screen ">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-5xl font-bold">Login now!</h1>
-                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <div className="hero min-h-screen ">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="text-center lg:text-left lg:ml-20">
+                        <div className="card w-96 bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="text-centel text-2xl font-bold">Purchase Form</h2>
+                                <form onSubmit={handleOrder}>
+
+
+                                    <div className="form-control w-full max-w-xs">
+                                        <label className="label">
+                                            <span className="label-text">Tool Name</span>
+                                        </label>
+                                        <input type="text"
+                                            placeholder="Tool Name"
+                                            value={name}
+                                            readOnly
+                                            className="input input-bordered w-full max-w-xs"
+                                        />
+                                    </div>
+                                    <div className="form-control w-full max-w-xs">
+                                        <label className="label">
+                                            <span className="label-text">Email</span>
+                                        </label>
+                                        <input type="email" name='email' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
+                                    </div>
+                                    <div className="form-control w-full max-w-xs">
+                                        <label className="label">
+                                            <span className="label-text">Phone</span>
+                                        </label>
+                                        <input type="text" name='phone' placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
+                                    </div>
+                                    <div className="form-control w-full max-w-xs">
+                                        <label className="label">
+                                            <span className="label-text">Quantity</span>
+                                        </label>
+                                        <input type="number"
+                                            placeholder="Your Quantity"
+                                            name='quantity'
+                                            defaultValue={parseInt(minium)}
+                                            className="input input-bordered w-full max-w-xs"
+                                        />
+                                    </div>
+                                    <div className="form-control w-full max-w-xs">
+                                        <label className="label">
+                                            <span className="label-text">Total Cost</span>
+                                        </label>
+                                        <input type="number"
+
+                                            className="input input-bordered w-full max-w-xs"
+                                        />
+                                    </div>
+                                    <div className="form-control w-full max-w-xs">
+                                        <label className="label">
+                                            <span className="label-text">Address</span>
+                                        </label>
+                                        <input type="text"
+                                            name='address'
+                                            placeholder="Your Address"
+                                            className="input input-bordered w-full max-w-xs"
+                                        />
+                                    </div>
+
+                                    <input />
+                                    <input className='btn w-full max-w-xs text-white' type="submit" value="Order" />
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <figure><img src={img} alt="Shoes" /></figure>
-                        <div class="card-body">
-                            <h2 class="card-title">{name}</h2>
+                        <div className="card-body">
+                            <h2 className="card-title">{name}</h2>
                             <div>
                                 <p>{description}</p>
                                 <br></br>
@@ -59,8 +116,8 @@ const Purchase = () => {
                                         : <span className=' text-red-500'>Not Available Now</span>
                                 }</h5>
                             </div>
-                            <div class="card-actions justify-end mt-auto">
-                                {/* <button onClick={() => navigatePurchase(_id)} disabled={parseInt(available)===0}  class="btn btn-primary">Buy Now</button> */}
+                            <div className="card-actions justify-end mt-auto">
+                                {/* <button onClick={() => navigatePurchase(_id)} disabled={parseInt(available)===0}  className="btn btn-primary">Buy Now</button> */}
                             </div>
                         </div>
                     </div>

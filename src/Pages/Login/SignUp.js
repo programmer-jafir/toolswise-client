@@ -35,7 +35,6 @@ const SignUp = () => {
     }
     if (user || guser) {
         console.log(guser || user);
-        // navigate('/appointment');
     }
 
 

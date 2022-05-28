@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
 import SignUP from './Pages/Login/SignUp';
+import RequireAuth from './Pages/Login/RequireAuth';
 import Tools from './Pages/Tool/Tools';
 import Footer from './Pages/Shared/Footer';
 import Purchase from './Pages/Tool/Purchase';
@@ -17,8 +18,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/tools" element={<Tools />} /> 
-        <Route path="/tool/:id" element={<Purchase />} /> 
-        <Route path="/purchase" element={<Purchase />} /> 
+        <Route path="/tool/:id" element={<RequireAuth>
+          <Purchase />
+        </RequireAuth>} /> 
+        <Route path="/purchase" element={<RequireAuth>
+          <Purchase />
+        </RequireAuth>} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUP/>} />
       </Routes>

@@ -7,10 +7,10 @@ import Banner from './Banner';
 const Home = () => {
     const [tools, setTools] = useState([]);
 
-    useEffect( () =>{
+    useEffect(() => {
         fetch('http://localhost:5000/tool')
-        .then(res => res.json())
-        .then(data => setTools(data))
+            .then(res => res.json())
+            .then(data => setTools(data))
     }, [])
 
     return (
@@ -20,13 +20,13 @@ const Home = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center'>
                 {
                     tools.slice(0, 6).map(tool => <Tool
-                    key={tool._id}
-                    tool={tool}
+                        key={tool._id}
+                        tool={tool}
                     />)
                 }
             </div>
             <div className='grid justify-center mt-9 mb-12'>
-            <Link to="tools" class="btn btn-secondary">See all Tools</Link>
+                <Link to="tools" className="btn btn-secondary">See all Tools</Link>
             </div>
         </div>
     );
