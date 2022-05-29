@@ -39,7 +39,7 @@ const AddProduct = () => {
                     <div className="text-center lg:text-left lg:ml-20">
                         <div className="card w-96 bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <h2 className="text-centel text-2xl font-bold">AddProduct Form</h2>
+                                <h2 className="text-centel text-2xl font-bold">Add A Product</h2>
                                 <form onSubmit={handleOrder}>
 
 
