@@ -19,7 +19,7 @@ const AddProduct = () => {
         }
         console.log(order);
 
-        fetch('http://localhost:5000/tool', {
+        fetch('https://vast-scrubland-15201.herokuapp.com/tool', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -58,7 +58,7 @@ const AddProduct = () => {
                                             <span className="label-text">Description</span>
                                         </label>
                                         <input type="text" name='description'
-                                        placeholder='description' className="input input-bordered w-full max-w-xs" />
+                                            placeholder='description' className="input input-bordered w-full max-w-xs" />
                                     </div>
                                     <div className="form-control w-full max-w-xs">
                                         <label className="label">
@@ -103,7 +103,7 @@ const AddProduct = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

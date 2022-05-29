@@ -18,6 +18,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import Blogs from './Pages/Blog/Blogs';
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/tools" element={<Tools />} /> 
+        <Route path="/about" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/tool/:id" element={<RequireAuth>
           <Purchase />
         </RequireAuth>} /> 

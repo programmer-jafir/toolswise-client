@@ -8,9 +8,9 @@ const useToken = user => {
         const currentUser = { email: email }
         console.log('email', email);
         console.log('currentUser', currentUser);
-        console.log('url', `http://localhost:5000/user/${email}`);
+        console.log('url', `https://vast-scrubland-15201.herokuapp.com/user/${email}`);
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://vast-scrubland-15201.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
