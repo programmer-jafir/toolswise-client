@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const Purchase = () => {
     const { id, } = useParams();
@@ -40,10 +40,10 @@ const Purchase = () => {
             },
             body: JSON.stringify(order)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
         toast('Your order is successful')
     }
     return (
