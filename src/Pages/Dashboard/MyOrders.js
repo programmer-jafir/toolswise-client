@@ -36,7 +36,6 @@ const MyOrders = () => {
     )
     return (
         <div>
-            <h2>My Appointments: {orders.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
