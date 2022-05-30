@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import about from '../../assets/img/about.jpg'
-// import appointment from '../../assets/images/appointment.png';
-// import PrimaryButton from '../Shared/PrimaryButton';
-
-const MakeAppointment = () => {
+const About = () => {
     return (
         <section 
         className='flex justify-center items-center bg-gray-900 mb-12'>
@@ -22,4 +18,4 @@ const MakeAppointment = () => {
     );
 };
 
-export default MakeAppointment;
+export default About;
