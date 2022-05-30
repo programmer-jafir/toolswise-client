@@ -9,6 +9,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
+    
     useEffect(() => {
         if (user) {
             fetch(`https://vast-scrubland-15201.herokuapp.com/order?userEmail=${user.email}`, {
@@ -29,8 +30,9 @@ const MyOrders = () => {
                 .then(data => {
                     setOrders(data)
                 })
-        }
-    }, [user]
+            }
+        }, [user]
+        
     )
     return (
         <div>
@@ -56,8 +58,8 @@ const MyOrders = () => {
                                 <td>{a.address}</td>
                                 <td>{a.phone}</td>
                                 <td>
-                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs bg-red-500 '>cancle</button></Link>}
+                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success mr-3'>pay</button></Link>}
+                                    {(a.price && !a.paid) && <button className='btn btn-xs btn-error'>cancle</button>}                               
                                     {(a.price && a.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>

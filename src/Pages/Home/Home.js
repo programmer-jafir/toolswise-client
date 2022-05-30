@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import About from './About';
 import Tool from '../Tool/Tool';
 import Tools from '../Tool/Tools';
 import Banner from './Banner';
@@ -29,6 +30,7 @@ const Home = () => {
             <div className='grid justify-center mt-9 mb-12'>
                 <Link to="tools" className="btn btn-secondary">See all Tools</Link>
             </div>
+            <About></About>
             <Contact></Contact>
         </div>
     );
