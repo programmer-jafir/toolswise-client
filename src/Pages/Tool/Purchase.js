@@ -27,7 +27,11 @@ const Purchase = () => {
             toolName: name,
             userName: user.displayName,
             userEmail: user.email,
-            quantity: event.target.quantity.value,
+            perPrice: perPrice,
+            img: img,
+            description: description,
+            quantity: parseInt(event.target.quantity.value),
+            price: parseInt(perPrice)* parseInt(event.target.quantity.value),
             address: event.target.address.value,
             phone: event.target.phone.value,
         }
@@ -87,16 +91,7 @@ const Purchase = () => {
                                         <input type="number"
                                             placeholder="Your Quantity"
                                             name='quantity'
-                                            defaultValue={parseInt(minium)}
-                                            className="input input-bordered w-full max-w-xs"
-                                        />
-                                    </div>
-                                    <div className="form-control w-full max-w-xs">
-                                        <label className="label">
-                                            <span className="label-text">Total Cost</span>
-                                        </label>
-                                        <input type="number"
-
+                                            defaultValue={minium}
                                             className="input input-bordered w-full max-w-xs"
                                         />
                                     </div>

@@ -19,6 +19,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import Blogs from './Pages/Blog/Blogs';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Dashboard />
         </RequireAuth>} >
           <Route index element={<MyOrders/>}></Route>
+        <Route path="payment/:id" element={<Payment />} />
           <Route path='review' element={<AddReview/>}></Route>
           <Route path='Makeadmin' element={<RequireAdmin>
             <MakeAdmin/>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Tool from '../Tool/Tool';
 import Tools from '../Tool/Tools';
 import Banner from './Banner';
+import Contact from './Contact';
 
 const Home = () => {
     const [tools, setTools] = useState([]);
@@ -28,6 +29,7 @@ const Home = () => {
             <div className='grid justify-center mt-9 mb-12'>
                 <Link to="tools" className="btn btn-secondary">See all Tools</Link>
             </div>
+            <Contact></Contact>
         </div>
     );
 };
