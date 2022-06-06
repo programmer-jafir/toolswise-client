@@ -1,8 +1,8 @@
 # Welcome to Toolswise
 
 ### This project Live site  [Toolswise](https://toolswise-2bc5b.web.app/).
-#### This project Client site code link [Toolswise client](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-programmer-jafir).
-#### This project Server site code link [Toolswise server](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-programmer-jafir).
+#### This project Client site code link [Toolswise client](https://github.com/programmer-jafir/toolswise-client).
+#### This project Server site code link [Toolswise server](https://github.com/programmer-jafir/toolswise-server).
 
 ## Website feature
 
